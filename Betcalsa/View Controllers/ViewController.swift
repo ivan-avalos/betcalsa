@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        collectionView.backgroundColor = .white
+        //view.backgroundColor = .white
+        //collectionView.backgroundColor = .white
         collectionView?.contentInset = UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
         let scannerVC = ImageScannerController()
         scannerVC.imageScannerDelegate = self
