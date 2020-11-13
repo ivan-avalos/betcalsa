@@ -1,11 +1,11 @@
 # WeScan
-
+ 
 <p align="center">
     <img width="900px" src="Assets/WeScan-Banner.jpg">
 </p>
 
 <p align="center">
-<img src="https://travis-ci.com/WeTransfer/WeScan.svg?token=Ur5V2zzKmBJLmMYHKJTF&branch=master"/>
+<img src="https://app.bitrise.io/app/df00af454f27891d.svg?token=spjxNvzjnRqug6GfGM3_Lg"/>
 <img src="https://img.shields.io/cocoapods/v/WeScan.svg?style=flat"/>
 <img src="https://img.shields.io/cocoapods/l/WeScan.svg?style=flat"/>
 <img src="https://img.shields.io/cocoapods/p/WeScan.svg?style=flat"/>
@@ -21,30 +21,30 @@ It's modelled after `UIImagePickerController`, which makes it a breeze to use.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Contributing](#contributing)
 - [Communication](#communication)
 - [License](#license)
 
 ## Features
 
-- [x] Fast
+- [x] Fast and lightweight
 - [x] Live scanning of documents
 - [x] Edit detected rectangle
 - [x] Auto scan and flash support
-- [x] Lightweight dependency
+- [x] Support for both PDF and UIImage
 - [x] Translated to English, Chinese, Italian, Portuguese, and French
 - [ ] Batch scanning
 
 ## Demo
 
 <p align="left">
-    <img src="Assets/WeScan.gif">
+    <img width="350px" src="Assets/WeScan.gif">
 </p>
 
 ## Requirements
 
-- Swift 4.2
+- Swift 5.0
 - iOS 10.0+
-- Xcode 9.x
 
 <br>
 
@@ -102,7 +102,13 @@ Simply add the WeScan framework in the project's Embedded Binaries and Linked Fr
 
 ## Usage
 
-1. Make sure that your ViewController confirms to the `ImageScannerControllerDelegate` protocol
+### Swift
+
+1. In order to make the framework available, add `import WeScan` at the top of the Swift source file 
+
+2. In the Info.plist, add the `NSCameraUsageDescription` key and set the appropriate value in which you have to inform the user of the reason to allow the camera permission
+
+3. Make sure that your view controller conforms to the `ImageScannerControllerDelegate` protocol:
 
 ```swift
 class YourViewController: UIViewController, ImageScannerControllerDelegate {
@@ -110,7 +116,7 @@ class YourViewController: UIViewController, ImageScannerControllerDelegate {
 }
 ```
 
-2. Implement the delegate functions inside your view controller:
+4. Implement the delegate functions inside your view controller:
 ```swift
 func imageScannerController(_ scanner: ImageScannerController, didFailWithError error: Error) {
     // You are responsible for carefully handling the error
@@ -130,7 +136,7 @@ func imageScannerControllerDidCancel(_ scanner: ImageScannerController) {
 }
 ```
 
-3. Finally, create and present a `ImageScannerController` instance somewhere within your view controller:
+5. Finally, create and present a `ImageScannerController` instance somewhere within your view controller:
 
 ```swift
 let scannerViewController = ImageScannerController()
@@ -148,13 +154,15 @@ present(scannerViewController, animated: true)
 
 #### Example Implementation
 ```objc
-ImageScannerController *scannerViewController = [ImageScannerController new];
+ImageScannerController *scannerViewController = [[ImageScannerController alloc] init];
 [self presentViewController:scannerViewController animated:YES completion:nil];
 ```
 
 <br>
 
-## Communication
+## Contributing
+
+As the creators, and maintainers of this project, we're glad to invite contributors to help us stay up to date. Please take a moment to review [the contributing document](CONTRIBUTING.md) in order to make the contribution process easy and effective for everyone involved.
 
 - If you **found a bug**, open an [issue](https://github.com/WeTransfer/WeScan/issues).
 - If you **have a feature request**, open an [issue](https://github.com/WeTransfer/WeScan/issues).

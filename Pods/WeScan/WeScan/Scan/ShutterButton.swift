@@ -27,7 +27,7 @@ final class ShutterButton: UIControl {
         }
     }
     
-    // MARL: Life Cycle
+    // MARK: - Life Cycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,6 +46,8 @@ final class ShutterButton: UIControl {
     // MARK: - Drawing
     
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
+
         outterRingLayer.frame = rect
         outterRingLayer.path = pathForOutterRing(inRect: rect).cgPath
         outterRingLayer.fillColor = UIColor.white.cgColor

@@ -259,22 +259,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Betcalsa/Pods-Betcalsa-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PDFGenerator/PDFGenerator.framework",
-				"${BUILT_PRODUCTS_DIR}/WeScan/WeScan.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Betcalsa/Pods-Betcalsa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDFGenerator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WeScan.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Betcalsa/Pods-Betcalsa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Betcalsa/Pods-Betcalsa-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betcalsa/Pods-Betcalsa-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		94975F7521D69B5E0017F3FB /* ShellScript */ = {

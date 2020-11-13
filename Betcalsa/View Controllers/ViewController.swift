@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     var documents = [URL]()
-    var scannedImage: UIImage!
+    var scannedImage: ImageScannerScan!
     var documentOrderNumber = 0
     
     override func viewDidLoad() {
@@ -152,13 +152,13 @@ extension ViewController: ImageScannerControllerDelegate {
     }
     
     func imageScannerController(_ scanner: ImageScannerController, didFinishScanningWithResults results: ImageScannerResults) {
-        if results.doesUserPreferEnhancedImage {
-            scannedImage = results.enhancedImage
+        if results.doesUserPreferEnhancedScan {
+            scannedImage = results.enhancedScan
         } else {
-            scannedImage = results.scannedImage
+            scannedImage = results.croppedScan
         }
         scanner.dismiss(animated: true, completion: nil)
-        showSaveDialog(scannedImage: scannedImage)
+        showSaveDialog(scannedImage: scannedImage.image)
     }
     
     func imageScannerControllerDidCancel(_ scanner: ImageScannerController) {

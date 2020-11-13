@@ -17,13 +17,20 @@ final class EditScanCornerView: UIView {
     private var image: UIImage?
     private(set) var isHighlighted = false
     
-    lazy private var circleLayer: CAShapeLayer = {
+    private lazy var circleLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
         layer.strokeColor = UIColor.white.cgColor
         layer.lineWidth = 1.0
         return layer
     }()
+
+    /// Set stroke color of coner layer
+    public var strokeColor: CGColor? {
+        didSet {
+            circleLayer.strokeColor = strokeColor
+        }
+    }
     
     init(frame: CGRect, position: CornerPosition) {
         self.position = position
